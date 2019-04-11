@@ -21,14 +21,14 @@ app.use(fileUpload())
 app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use('/public', express.static(__dirname + '/public'));
+app.use('/public/images', express.static(__dirname + '/public/images'));
 
 
 app.post('/upload', (req, res, next) => {
   console.log(req);
   let imageFile = req.files.file;
 
-  imageFile.mv(`${__dirname}/public/${req.body.filename}.jpg`, function(err) {
+  imageFile.mv(`${__dirname}/public/images/${req.body.filename}.jpg`, function(err) {
     if (err) {
       return res.status(500).send(err);
     }
