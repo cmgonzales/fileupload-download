@@ -7,6 +7,7 @@ const cors = require('cors')
 const fileUpload = require('express-fileupload');
 const bodyParser = require('body-parser');
 var app = express();
+const imagefile = require('./routes/images')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,6 +23,8 @@ app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/public/images', express.static(__dirname + '/public/images'));
+
+app.use('/image', imagefile )
 
 
 app.post('/upload', (req, res, next) => {
@@ -45,6 +48,8 @@ app.use(function(req, res, next) {
 });
 
 
+
+
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -56,8 +61,10 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+
+
 app.listen(8000 , () =>{
-console.log("listening")
+console.log("listen")
 })
 
 module.exports = app;
