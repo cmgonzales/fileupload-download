@@ -24,8 +24,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/public/images', express.static(__dirname + '/public/images'));
 
-app.use('/image', imagefile )
-
+app.use('/images', imagefile )
 
 app.post('/upload', (req, res, next) => {
   console.log(req);
@@ -48,8 +47,6 @@ app.use(function(req, res, next) {
 });
 
 
-
-
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -60,8 +57,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-
 
 app.listen(8000 , () =>{
 console.log("listen")

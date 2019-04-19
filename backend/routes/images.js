@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
     console.log(err)
     res.end("No Image")
   }else{
-    res.writeHead(200, {'Content-type': 'image//jpg'});
+    res.writeHead(200, {'Content-type': 'image/jpg'});
     res.end(content)
   }   
    });
