@@ -8,6 +8,9 @@ const fileUpload = require('express-fileupload');
 const bodyParser = require('body-parser');
 var app = express();
 const imagefile = require('./routes/images')
+const cloudinary = require('cloudinary')
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
