@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
   }   
    });
   });
-//routes
+//rou
 
 module.exports = router;
 
