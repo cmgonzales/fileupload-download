@@ -3,7 +3,7 @@ const express = require('express')
 const cloudinary = require('cloudinary')
 const formData = require('express-form-data')
 const cors = require('cors')
-//const { CLIENT_ORIGIN } = require('./config')
+
 
 const app = express()
 
@@ -14,6 +14,8 @@ cloudinary.config({
   api_key: process.env.API_KEY, 
   api_secret: process.env.API_SECRET
 })
+
+console.log(process.env.CLOUD_NAME)
 
 
   
