@@ -25,7 +25,10 @@ app.use(cors({
 
 app.use(formData.parse())
 
-app.get('/wake-up', (req, res) => res.send("wake-up page"))
+app.get('/', (req, res) => {
+
+  res.send('page')
+})
 
 app.post('/imageupload', (req, res) => {
 
