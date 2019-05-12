@@ -35,12 +35,25 @@ app.post('/imageupload', (req, res) => {
 
 
   const values = Object.values(req.files)
-  const promises = values.map(image => cloudinary.uploader.upload(image.path))
+
+  console.log(values)
+  
+  const promises = values.map(image => cloudinary.uploader.upload(image.path, 
+    { use_filename: true,
+    unique_filename:false }, 
+    function(error, result) {console.log(result, error)}
+
+  ))
+
+
   
   Promise
     .all(promises)
     .then(results => res.json(results))
     .catch((err) => res.status(400).json(err))
 })
+
+
+
 
 app.listen(process.env.PORT || 8000, () => console.log('listening'))
