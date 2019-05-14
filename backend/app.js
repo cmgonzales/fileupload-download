@@ -1,6 +1,6 @@
 require('dotenv').config()
 const express = require('express')
-const cloudinary = require('cloudinary')
+const cloudinary = require('cloudinary').v2;
 const formData = require('express-form-data')
 const cors = require('cors')
 
@@ -32,28 +32,20 @@ app.get('/', (req, res) => {
 
 app.post('/imageupload', (req, res) => {
 
-
-
   const values = Object.values(req.files)
-
-  console.log(values)
   
-  const promises = values.map(image => cloudinary.uploader.upload(image.path, 
+  values.map(image => 
+    cloudinary.uploader.upload(image.path, 
     { use_filename: true,
-    unique_filename:false }, 
+    unique_filename: false ,
+    public_id: image.name,
+    tags: 'profile',
+    },
     function(error, result) {console.log(result, error)}
 
   ))
 
-
-  
-  Promise
-    .all(promises)
-    .then(results => res.json(results))
-    .catch((err) => res.status(400).json(err))
 })
-
-
 
 
 app.listen(process.env.PORT || 8000, () => console.log('listening'))
