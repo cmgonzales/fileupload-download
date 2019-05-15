@@ -17,7 +17,7 @@ cloudinary.config({
 
 console.log(process.env.CLOUD_NAME)
 
-
+//test
   
 app.use(cors({ 
   origin: 'http://localhost:3000' 
