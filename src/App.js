@@ -10,6 +10,7 @@ render(){
   return(
     <div>
     <Upload/>
+    <h1>test</h1>
     </div>
   )
 }
