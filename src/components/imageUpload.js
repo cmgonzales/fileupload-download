@@ -34,6 +34,9 @@ files.forEach((file, i) => {
   })
 }
 
+nextPage = e => {
+    console.log("next page")
+}
 
 
 
@@ -42,8 +45,9 @@ render(){
 return(
   <div>
   <div className = "buttons">
-  <Button onChange = {this.onChange} />
- 
+  <Button onChange = {this.onChange} onClick />
+  <button onClick = {this.nextPage}> Next page
+  </button>
   </div>
 </div>
 )

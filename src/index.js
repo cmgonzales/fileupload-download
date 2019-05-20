@@ -4,14 +4,14 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import { Router, Route } from "react-router";
+
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 
 ReactDOM.render((
    <Router>
     <Route path = "/" component = {App}>
   
- 
     </Route>
  </Router>
     

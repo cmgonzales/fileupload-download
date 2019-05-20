@@ -1,7 +1,6 @@
 import React from 'react';
 
     const image = prop=> (
-    
       
         <div>
         <h1>test</h1>
