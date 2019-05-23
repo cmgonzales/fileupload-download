@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import {API_URL} from './config'
 import Button from './Button'
+import {NavLink} from 'react-router-dom'
 
 
 class imageUpload extends Component{
@@ -46,8 +47,7 @@ return(
   <div>
   <div className = "buttons">
   <Button onChange = {this.onChange} onClick />
-  <button onClick = {this.nextPage}> Next page
-  </button>
+  <NavLink to="/image">Image</NavLink>
   </div>
 </div>
 )
