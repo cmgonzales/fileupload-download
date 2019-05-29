@@ -6,18 +6,19 @@ import Image from './components/Image'
 import * as serviceWorker from './serviceWorker';
 
 
+
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 
 ReactDOM.render((
+   
    <Router>
     <Route path = "/" component = {App}></Route>
     <Route path = '/image' component = {Image}></Route>
     <Route path = 'about' component = {App}>
-  
     </Route>
  </Router>
-    
+  
     ), document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
