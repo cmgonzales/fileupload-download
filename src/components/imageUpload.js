@@ -4,6 +4,7 @@ import Button from './Button'
 import {NavLink} from 'react-router-dom'
 
 
+
 class imageUpload extends Component{
 
 state = {
@@ -45,13 +46,10 @@ render(){
 
 return(
   <div>
-  <div className = "buttons">
   <Button onChange = {this.onChange} onClick />
   <NavLink to="/image">Image</NavLink>
   </div>
-</div>
 )
-
 }
 }
 export default imageUpload;
