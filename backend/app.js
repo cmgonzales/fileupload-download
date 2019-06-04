@@ -4,9 +4,9 @@ const cloudinary = require('cloudinary')
 const formData = require('express-form-data')
 const cors = require('cors')
 const { CLIENT_ORIGIN } = require('./config')
-const bodyParser = require('body-parser')
 
-const app = express()
+
+const app = express();
 
 cloudinary.config({ 
   cloud_name: process.env.CLOUD_NAME, 
@@ -20,6 +20,8 @@ app.use(cors({
 
 app.use(formData.parse())
 
+app.get('/image', (req, res) => res.send("test"))
+
 
 app.post('/imageupload', (req, res) => {
 
@@ -27,7 +29,7 @@ app.post('/imageupload', (req, res) => {
   
     console.log(values)
   
-    const promises = values.map(image => cloudinary.uploader.upload(image.path, 
+   
     values.map(image => 
       cloudinary.uploader.upload(image.path, 
       { use_filename: true,
@@ -36,9 +38,8 @@ app.post('/imageupload', (req, res) => {
       tags: 'profile',
       },
       function(error, result) {console.log(result, error)}
+      
       )
-    )
-    )
     )
 });
 
