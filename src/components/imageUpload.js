@@ -2,6 +2,8 @@ import React,{Component} from 'react'
 import {API_URL} from './config'
 import Button from './Button'
 import {NavLink} from 'react-router-dom'
+import image from './image'
+import './styles/imageUpload.css'
 
 
 
@@ -36,10 +38,6 @@ files.forEach((file, i) => {
   })
 }
 
-nextPage = e => {
-    console.log("next page")
-}
-
 
 
 render(){
@@ -47,7 +45,9 @@ render(){
 return(
   <div>
   <Button onChange = {this.onChange} onClick />
-  <NavLink to="/image">Image</NavLink>
+  <button>
+  <NavLink className = "button" to="/image" Component = {image}>Image</NavLink>
+  </button>
   </div>
 )
 }

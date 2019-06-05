@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import Upload from './imageUpload'
-import './App.css'
+import './styles/App.css'
 import {SectionsContainer, Section} from 'react-fullpage';
 
 

@@ -1,13 +1,13 @@
 
 .img{
-  background-image: url('./images/img.jpeg');
+  background-image: url('../images/img.jpeg');
   background-size: cover;
  
 }
 
 .center_input{
   position:fixed;
-  height: 30%;
+  height: 40%;
   top: 20%;
   left: 30%;
   background-color: white;

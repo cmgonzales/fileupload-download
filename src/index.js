@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
+import images from './components/image'
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -9,10 +10,9 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 ReactDOM.render((
    
    <Router>
-    <Route path = "/" component = {App}></Route>
-  
-    <Route path = 'about' component = {App}>
-    </Route>
+    <Route exact path = "/" component = {App}></Route>
+   <Route path = "/image" component = {images}></Route>
+
  </Router>
   
     ), document.getElementById('root'));
